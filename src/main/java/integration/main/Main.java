@@ -18,7 +18,7 @@ public class Main {
         methods.add(new RightEndpointMethod());
         methods.add(new MidpointMethod());
         methods.add(new TrapezoidMethod());
-        methods.add(new SimpsonsMethod());
+//        methods.add(new SimpsonsMethod());
         for (IntegrationMethod m : methods) {
             System.out.println(m + ": " + m.solve(fx, a, b));
         }
