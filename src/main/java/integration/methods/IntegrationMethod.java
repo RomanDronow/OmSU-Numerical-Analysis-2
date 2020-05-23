@@ -1,7 +1,7 @@
 package integration.methods;
 
-import integration.function.IntegralFunction;
+import java.util.function.Function;
 
 public interface IntegrationMethod {
-    float solve(IntegralFunction fx, float a, float b);
+    double solve(Function<Double, Double> fx, double a, double b);
 }

@@ -1,18 +1,18 @@
 package integration.methods.rectangles;
 
-import integration.function.IntegralFunction;
 import integration.methods.IntegrationMethod;
 import integration.util.Util;
 
+import java.util.function.Function;
+
 public class RightEndpointMethod implements IntegrationMethod {
     @Override
-    public float solve(IntegralFunction fx, float a, float b) {
-        float n = Util.getSteps();
-        float EPS = Util.getEPS();
-        float h = (b - a) / n;
-        float integral = 0;
-        for (float i = a + h; i-EPS <= b; i += h) {
-            System.out.println(i);
+    public double solve(Function<Double, Double> fx, double a, double b) {
+        double n = Util.getSteps();
+        double EPS = Util.getEPS();
+        double h = (b - a) / n;
+        double integral = 0;
+        for (double i = a + h; i-EPS <= b; i += h) {
             integral += h * fx.apply(i);
         }
         return integral;
